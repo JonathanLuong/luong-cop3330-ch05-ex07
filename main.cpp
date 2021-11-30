@@ -5,31 +5,32 @@
 
 #include "std_lib_facilities.h"
 
-void calculate(double a, double b, double c) {
-	double res1 = ((-1*b) + sqrt((pow(b,2)-(4*a*b)))) / (2*a);
-	double res1 = ((-1*b) - sqrt((pow(b,2)-(4*a*b)))) / (2*a);
 
-	cout << "Root 1: " << res1 << "\nRoot 2: " << res2;
+// With constant values, you cannot change its values
+void constAdd(const int num1, const int num2) {
+	num1 = num1 + 5;
+	int res = num1 + num2;
+
+	cout << "Const addition result: " << res << "\n";
 }
+
+void add(int num1, int num2) {
+	num1 = num1 + 5;
+	int res = num1 + num2;
+
+	cout << "Not const addition result: " << res << "\n";
+}
+
 
 int main()
 {
-	double a = 0;
-	double b = 0; 
-	double c = 0;
+	int num1 = 0, num2 = 0;
+	cout << "Enter two numbers to add: ";
 
-	cout << "Enter values for a, b, and c for the quadratic formula\n";
-	cin >> a >> b >> c;
+	cin >> num1 >> num2;
 
-	double num1 = convert(d1);
-	double num2 = convert(d2);
-
-	while((pow(b,2)-(4*a*b)) < 0 || a == 0) {
-		cout << "Reenter values for a, b, and c for the quadratic formula\n";
-		cin >> a >> b >> c;
-	}
-
-	calculate(a,b,c);
+	constAdd(num1, num2);
+	add(num1, num2);
 
 	return 0;
 }
